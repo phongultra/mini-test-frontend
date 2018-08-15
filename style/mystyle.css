@@ -1,3 +1,6 @@
+html{
+    overflow-x: hidden;
+}
 .container {
     width: 90%;
 }
@@ -9,6 +12,7 @@ body{
     color: #fff;
     background-position: center;
     text-transform: uppercase;
+    overflow: hidden;
 }
 
 header{
@@ -22,15 +26,22 @@ a, button, label, span{
 
 .banner{
     height: 20vh;
+    max-width: 100%;
     background-color: #5e368f;
-    border: 5px solid #fcda0d;
-    box-shadow: inset 5px 5px 20px rgba(0,0,0,0.5);
+    border: 3px solid #fcda0d;
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.37);
 }
 
 .nav-item{
     padding: 20px 30px;
 }
 
+div#top{
+    background: url("../asset/Top_Branch.png") top left no-repeat;
+    background-size: 20% auto;
+    background-color: transparent;
+    background-position: 5% 0%;
+}
 div#body{
     background: url("../asset/tree.png") top left repeat-y;
     background-size: 20% auto;
@@ -47,6 +58,10 @@ div#body{
     }
 }
 
+#body section{
+    padding-top: 10px;
+}
+
 #body section.has-branch{
     background: url("../asset/Big_Branch.png") bottom no-repeat;
     background-size: 80% auto;
@@ -56,18 +71,65 @@ div#body{
 }
 
 
-.has-tree-footer{
+.tree-footer{
     width: 100%;
     height: 100%;
 }
 
 .bg-violet{
     background-color: #5e368f;
-    padding: 15px;
-    border-bottom: 5px solid #381b59;
+    padding: 13px;
+    border-bottom: 3px solid #381b59;
 }
 
 .col-centered{
     float: none;
     margin: 0 auto;
+}
+
+.curver-1{
+    width: 30%;
+    position: absolute;
+    right: -15%;
+    top: -10%;
+    z-index: -1;
+}
+.curver-2{
+    width: 40%;
+    position: absolute;
+    right: -15%;
+    bottom: -20%;
+    z-index: -1;
+}
+.curver-3{
+    width: 50%;
+    position: absolute;
+    left: -15%;
+    bottom: -20px;
+    z-index: 0;
+}
+
+.headline{
+    max-height: 66px;
+    max-width: 100%;
+}
+
+.my-frame{
+    border: 3px solid #381b59;
+    background-color: #fff;
+}
+
+img{
+    max-width: 100%;;
+}
+
+.btn-main{
+    background-color: transparent;
+    outline: none;
+}
+.btn-main>img{
+    max-height: 30px;
+}
+.btn-main>img:hover{
+    filter: brightness(120%)
 }
