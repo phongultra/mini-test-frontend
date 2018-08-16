@@ -32,8 +32,20 @@ a, button, label, span{
     box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.37);
 }
 
+.navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover {
+    color: rgb(255, 242, 0);
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgb(255, 255, 255);
+}
+
+.nav-link {
+    cursor: pointer;
+}
+
 .nav-item{
-    padding: 20px 30px;
+    padding: 0px 15px;
 }
 
 div#top{
@@ -210,4 +222,10 @@ img.btn-slider {
 }
 .h-150{
     height: 150px;
+}
+
+@media (min-width: 992px){
+    .navbar-expand-lg .navbar-toggler {
+        display: none;
+    }
 }

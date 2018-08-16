@@ -4,68 +4,56 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="MINI FRONTEND TEST">
-  <meta name="author" content="PHONG NGUYEN">
+  <meta name="description" content="Mini Frontend test">
+  <meta name="author" content="Phong Nguyen">
 
   <title>HOME PAGE</title>
 
   <!-- Custom font -->
   <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Carter+One">
 
-
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Custom styles for this template -->
-  <!-- <link href="css/agency.min.css" rel="stylesheet"> -->
-  <!-- MY STYLE -->
+  <!-- Custom CSS -->
   <link href="style/mystyle.css" rel="stylesheet">
 
 </head>
 
-<body>
-  <!-- Navigation -->
-  <!--Navbar-->
-  <nav class="navbar bg-violet">
-
-    <!-- Navbar brand -->
+<body data-spy="scroll" data-target=".navbar">
+  <nav class="navbar navbar-expand-md navbar-dark bg-violet">
     <a class="navbar-brand" href="#"></a>
-
-    <!-- Collapse button -->
-    <button class="navbar-toggler toggler-example pull-right" type="button" data-toggle="collapse" data-target="#navCollapse"
-      aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation">
-      <span>
-        Menu
-      </span>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
     </button>
-
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="navCollapse">
-
-      <!-- Links -->
+    <div id="navbarNavDropdown" class="navbar-collapse collapse">
+      <ul class="navbar-nav mr-auto">
+      </ul>
       <ul class="navbar-nav text-center">
         <li class="nav-item">
-          <a class="nav-link" href="#">Home
+          <a class="nav-link" href="#home">Home
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Videos</a>
+          <a class="nav-link" href="#video">Videos
+          </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Meet the beanz</a>
+          <a class="nav-link" href="#meatthebeanz">Meat the beanz
+          </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Products</a>
+          <a class="nav-link" href="#product">Products
+          </a>
         </li>
       </ul>
-      <!-- Links -->
-
     </div>
-    <!-- Collapsible content -->
   </nav>
-  <!--/.Navbar-->
+
+  <!-- Top Page -->
   <div id="top">
-    <header>
+    <header id="home">
       <div class="container">
         <div class="row">
           <div class="col-xl-8 col-lg-8 col-md-9 col-xs-10 col-centered">
@@ -100,9 +88,8 @@
       </div>
     </section>
 
-
     <!-- Videos -->
-    <section class="has-branch">
+    <section id="video" class="has-branch">
       <div class="container">
         <div class="row">
           <div class="col-xl-5 col-lg-5 col-md-6 col-sm-8 col-xs-10 col-centered text-center">
@@ -159,7 +146,7 @@
     </section>
 
     <!-- Meet The Beanz -->
-    <section class="has-branch">
+    <section id="meatthebeanz" class="has-branch">
       <div class="container">
         <div class="row">
           <div class="col-xl-5 col-lg-7 col-md-8 col-sm-10 col-xs-12 col-centered text-center">
@@ -192,7 +179,7 @@
     </section>
 
     <!-- Products -->
-    <section class="has-branch">
+    <section id="product" class="has-branch">
       <div class="container">
         <div class="row">
           <div class="col-xl-5 col-lg-7 col-md-8 col-sm-10 col-xs-12 col-centered text-center">
@@ -208,9 +195,9 @@
                   <img class="btn-slider" src="asset/btn_DOWNLOADNOW.png" />
                 </li>
                 <li class="menu-item">
-                    <div class="menu-item-content border-violet2 h-100px"></div>
-                    <p class="p-header">Name of 2</p>
-                    <img class="btn-slider" src="asset/btn_DOWNLOADNOW.png" />
+                  <div class="menu-item-content border-violet2 h-100px"></div>
+                  <p class="p-header">Name of 2</p>
+                  <img class="btn-slider" src="asset/btn_DOWNLOADNOW.png" />
                 </li>
               </ul>
               <div class="slider-control">
@@ -252,12 +239,37 @@
     </footer>
   </div>
 
-
-
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      // Add scrollspy to <body>
+      $('body').scrollspy({ target: ".navbar", offset: 50 });
 
+      // Add smooth scrolling on all links inside the navbar
+      $("#navbarNavDropdown a").on('click', function (event) {
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+          // Prevent default anchor click behavior
+          event.preventDefault();
+
+          // Store hash
+          var hash = this.hash;
+
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 800, function () {
+
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+          });
+        }  // End if
+      });
+    });
+  </script>
 </body>
 
 </html>
