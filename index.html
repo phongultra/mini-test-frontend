@@ -21,7 +21,7 @@
 </head>
 
 <body data-spy="scroll" data-target=".navbar">
-  <nav class="navbar navbar-expand-md navbar-dark bg-violet">
+  <nav class="navbar navbar-expand-md navbar-light bg-violet">
     <a class="navbar-brand" href="#"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
       aria-expanded="false" aria-label="Toggle navigation">
@@ -237,6 +237,9 @@
         </div>
       </div>
     </footer>
+
+    <div id="scrollTop" style="display: none;" class="text-center">^
+      <br>Top</div>
   </div>
 
   <!-- Bootstrap core JavaScript -->
@@ -268,6 +271,21 @@
           });
         }  // End if
       });
+
+      //Scrolltop
+      $("#scrollTop").click(function () {
+        $("html, body").animate({ scrollTop: 0 }, 1000);
+      })
+
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > 500) {
+          $('#scrollTop').fadeIn();
+        } else {
+          $('#scrollTop').fadeOut();
+        }
+      });
+      $('#scrollTop').fadeOut();
+
     });
   </script>
 </body>
