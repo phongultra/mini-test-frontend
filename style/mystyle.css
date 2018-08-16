@@ -49,15 +49,6 @@ div#body{
     background-position: 5% 0%;
 }
 
-
-
-@media only screen and (max-width: 600px) {
-    div#body{
-        background-size: 20% auto;
-        background-position: 0%;
-    }
-}
-
 #body section{
     padding-top: 10px;
 }
@@ -70,6 +61,26 @@ div#body{
     padding-bottom: 10vh;
 }
 
+@media only screen and (max-width: 600px) {
+    div#body, div#top{
+        background-size: 20% auto;
+        background-position: -10%;
+    }
+
+    #body section.has-branch{
+        background-size: 95% auto;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    div#body, div#top{
+        background-size: 15% auto;
+    background-position: 25%;
+    }
+
+    #body section.has-branch{
+        background-size: 45% auto;
+    }
+}
 
 .tree-footer{
     width: 100%;
@@ -102,10 +113,17 @@ div#body{
     z-index: -1;
 }
 .curver-3{
-    width: 50%;
+    width: 55%;
     position: absolute;
-    left: -15%;
+    left: -30%;
     bottom: -20px;
+    z-index: 0;
+}
+
+.flipand-roll{
+    width: 20%;
+    position: absolute;
+    left: -20px;
     z-index: 0;
 }
 
@@ -114,9 +132,16 @@ div#body{
     max-width: 100%;
 }
 
-.my-frame{
+.border-violet{
     border: 3px solid #381b59;
     background-color: #fff;
+}
+
+.border-violet2{
+    border: 3px solid #381b59;
+    background-color: #fefecbd6;
+    height: 100px;
+    border-radius: 2px;
 }
 
 img{
@@ -132,4 +157,57 @@ img{
 }
 .btn-main>img:hover{
     filter: brightness(120%)
+}
+
+.main-slider{
+    display: flex;
+    margin-top: 30px;
+}
+
+ul.menu-list{
+    display: table;
+    width: 100%;
+    padding: 0;
+}
+
+li.menu-item{
+    display: table-cell;
+    padding: 10px;
+}
+
+.helper{
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+div.slider-control::before{
+    content: "";
+    display: inline-block;
+}
+
+img.btn-slider {
+    vertical-align: middle;
+    max-height: 25px;
+    max-width: 160px;
+}
+
+.btn-slider:hover{
+    filter: brightness(80%)
+}
+
+.p-header{
+    color: #f8f813;
+    font-weight: bold;
+    font-size: 130%;
+}
+
+.h-50px{
+    height: 50px;
+}
+.h-100px{
+    height: 100px;
+}
+.h-150{
+    height: 150px;
 }
